@@ -2,8 +2,9 @@
 Простой способ использования Telegram Bot Api.
 
 ## Установка
+```php
 composer require tauweb/simple-tg-bot-api
-
+```
 Пример использования 
 ```php
 $bot = new Bot('Your Bot Token');
