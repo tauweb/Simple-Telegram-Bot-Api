@@ -1,5 +1,5 @@
 <?php
-namespace tauweb\SimpleTelegramBotApi;
+namespace Tauweb\SimpleTelegramBotApi;
 
 class TelegramBotApi {
     const BASE_BOT_API_URL = 'https://api.telegram.org/bot';
