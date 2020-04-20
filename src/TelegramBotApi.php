@@ -1,6 +1,8 @@
 <?php
 namespace Tauweb\SimpleTelegramBotApi;
 
+use foo\bar;
+
 class TelegramBotApi {
     const BASE_BOT_API_URL = 'https://api.telegram.org/bot';
 
@@ -23,6 +25,12 @@ class TelegramBotApi {
 
     protected function sendRequest(string $method, array $params)
     {
+        foreach ($params as $param => $value) {
+            if (is_array($value)) {
+                $params[$param] = json_encode($params[$param]);
+            }
+        }
+
         $curlParams = [
             CURLOPT_SAFE_UPLOAD => true,
             CURLOPT_URL => self::BASE_BOT_API_URL . $this->accessToken .'/'.$method,
