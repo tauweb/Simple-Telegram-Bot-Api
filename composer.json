@@ -1,0 +1,13 @@
+{
+    "name": "tauweb/simple-tg-bot-api",
+    "description": "Simple php telegram bot api",
+    "type": "library",
+    "authors": [
+        {
+            "name": "WhiskeyMan",
+            "email": "WhiuskeyMan.Tau@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
