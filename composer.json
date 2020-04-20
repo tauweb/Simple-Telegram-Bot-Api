@@ -6,9 +6,14 @@
     "authors": [
         {
             "name": "WhiskeyMan",
-            "email": "WhiuskeyMan.Tau@gmail.com"
+            "email": "WhiskeyMan.Tau@gmail.com"
         }
     ],
     "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Tauweb\\SimpleTelegramBotApi\\": "src/"
+        }
+    },
     "require": {}
 }
