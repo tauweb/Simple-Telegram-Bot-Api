@@ -39,14 +39,13 @@ class TelegramBotApi {
         if ($response === false) {
             $errno = curl_errno($handle);
             $error = curl_error($handle);
-//            error_log("Curl returned error $errno: $error\n");
+            error_log(date("Y-m-d H:i:s") . ": No response from telegram server: $errno: $error\n", 3, './simple_telegram_bot_api.log');
             curl_close($handle);
-            throw new \Exception("No response from telegram server: $errno: $error\n.");
-//            return false;
+            throw new \Exception("No response from telegram server: $errno: $error\n");
         }
 
         $http_code = intval(curl_getinfo($handle, CURLINFO_HTTP_CODE));
         curl_close($handle);
         return $response;
     }
- }
+}
