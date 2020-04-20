@@ -2,6 +2,7 @@
     "name": "tauweb/simple-tg-bot-api",
     "description": "Simple php telegram bot api",
     "type": "library",
+    "license": "(LGPL-2.1-only or GPL-3.0-or-later)",
     "authors": [
         {
             "name": "WhiskeyMan",
