@@ -3,7 +3,7 @@
 
 ## Установка
 ```php
-composer require tauweb/simple-tg-bot-api
+composer require tauweb/simple-telegram-bot-api
 ```
 Пример использования 
 ```php
