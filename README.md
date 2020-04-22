@@ -16,6 +16,6 @@ $bot->sendMessage([
 ```
 или 
 ```php
-$result = (new Bot(static::$token))->setWebHook(['url' => 'https://bot_webhook_url']);
+$result = (new Bot('Your Bot Token'))->setWebHook(['url' => 'https://bot_webhook_url']);
 var_dump($result);
 ```
