@@ -1,8 +1,6 @@
 <?php
 namespace Tauweb\SimpleTelegramBotApi;
 
-use foo\bar;
-
 class TelegramBotApi {
     const BASE_BOT_API_URL = 'https://api.telegram.org/bot';
 
@@ -31,6 +29,15 @@ class TelegramBotApi {
             }
         }
 
+        $attachments = ['certificate', 'photo', 'sticker', 'audio', 'document', 'video'];
+
+        foreach ($attachments as $attachment) {
+            if (isset($params[$attachment])) {
+                $params[$attachment] = $this->curlFile($params[$attachment]);
+                break;
+            }
+        }
+
         $curlParams = [
             CURLOPT_SAFE_UPLOAD => true,
             CURLOPT_URL => self::BASE_BOT_API_URL . $this->accessToken .'/'.$method,
@@ -55,5 +62,24 @@ class TelegramBotApi {
         $http_code = intval(curl_getinfo($handle, CURLINFO_HTTP_CODE));
         curl_close($handle);
         return $response;
+    }
+
+    private function curlFile($path)
+    {
+//        if (is_array($path))
+//            return $path['file_id'];
+
+        $realPath = realpath($path);
+
+        if (class_exists('CURLFile')) {
+            $curlFile = new \CURLFile($realPath);
+        }
+
+        // если не файл (например передан file_id или нет такого файла)
+        if ($curlFile->name !== '') {
+            return $curlFile;
+        }
+
+        return $path;
     }
 }
