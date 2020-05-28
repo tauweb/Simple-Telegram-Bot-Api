@@ -1,27 +1,42 @@
 <?php
 namespace Tauweb\SimpleTelegramBotApi;
 
-class TelegramBotApi {
+class TelegramBotApi
+{
     const BASE_BOT_API_URL = 'https://api.telegram.org/bot';
+
+    protected $proxy = null;
 
     protected $accessToken = null;
 
     public function __construct(string $token)
     {
-        $this->setBotToken($token);
-    }
-
-    protected function setBotToken(string $token)
-    {
         $this->accessToken = $token;
     }
 
-    public function __call(string $method, array $arguments = [])
+    /**
+     * Set the SOCKS5 proxy
+     * @param string $proxy
+     */
+    public function setProxy(string $proxy): void
     {
-        return $this->sendRequest($method, $arguments[0] ?? []);
+        $this->proxy = $proxy;
     }
 
-    protected function sendRequest(string $method, array $params)
+    /**
+     * Call Telegram Bot Api Methods (can be found on https://core.telegram.org/bots/api#available-methods)
+     *
+     * @param string $method Telegram Bot Api method name (can be found on https://core.telegram.org/bots/api#available-methods)
+     * @param array $params Telegram Bot Api method params (can be found on https://core.telegram.org/bots/api#available-methods)
+     * @return string Telegram Bot Api response JSON-objects
+     * @throws \Exception
+     */
+    public function __call(string $method, array $params = []): string
+    {
+        return $this->sendRequest($method, $params[0] ?? []);
+    }
+
+    protected function sendRequest(string $method, array $params): string
     {
         foreach ($params as $param => $value) {
             if (is_array($value)) {
@@ -46,6 +61,11 @@ class TelegramBotApi {
             CURLOPT_POSTFIELDS => $params
         ];
 
+        if ($this->proxy !== null) {
+            $curlParams[CURLOPT_PROXY] = $this->proxy;
+            $curlParams[CURLOPT_PROXYTYPE] = CURLPROXY_SOCKS5;
+        }
+
         $handle = curl_init();
         curl_setopt_array($handle, $curlParams);
         $response = curl_exec($handle);
@@ -54,17 +74,21 @@ class TelegramBotApi {
         if ($response === false) {
             $errno = curl_errno($handle);
             $error = curl_error($handle);
+
             error_log(date("Y-m-d H:i:s") . ": No response from telegram server: $errno: $error\n", 3, './simple_telegram_bot_api.log');
             curl_close($handle);
+
             throw new \Exception("No response from telegram server: $errno: $error\n");
         }
 
         $http_code = intval(curl_getinfo($handle, CURLINFO_HTTP_CODE));
+
         curl_close($handle);
+
         return $response;
     }
 
-    private function curlFile($path)
+    protected function curlFile(string $path)
     {
 //        if (is_array($path))
 //            return $path['file_id'];
