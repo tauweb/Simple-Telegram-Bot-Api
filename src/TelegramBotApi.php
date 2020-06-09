@@ -75,7 +75,11 @@ class TelegramBotApi
             $errno = curl_errno($handle);
             $error = curl_error($handle);
 
-            error_log(date("Y-m-d H:i:s") . ": No response from telegram server: $errno: $error\n", 3, './simple_telegram_bot_api.log');
+            error_log(
+                date("Y-m-d H:i:s") . ": No response from telegram server: $errno: $error\n",
+                3,
+                './simple_telegram_bot_api.log'
+            );
             curl_close($handle);
 
             throw new \Exception("No response from telegram server: $errno: $error\n");
@@ -84,6 +88,16 @@ class TelegramBotApi
         $http_code = intval(curl_getinfo($handle, CURLINFO_HTTP_CODE));
 
         curl_close($handle);
+
+        // Detect response errors
+        $responseObj = json_decode($response);
+        if (isset($responseObj->ok) && $responseObj->ok === false) {
+            error_log(
+                date("Y-m-d H:i:s") . ": Telegram response error: $responseObj->error_code: $responseObj->description\n",
+                3,
+                './simple_telegram_bot_response_errors.log'
+            );
+        }
 
         return $response;
     }
