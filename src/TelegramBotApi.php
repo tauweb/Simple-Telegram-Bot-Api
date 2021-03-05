@@ -16,7 +16,7 @@ class TelegramBotApi
 
     /**
      * Get bot token
-     * @param string $proxy
+     * @return string Bot token
      */
     public function getToken(): string
     {
