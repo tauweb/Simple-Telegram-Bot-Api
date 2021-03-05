@@ -15,6 +15,15 @@ class TelegramBotApi
     }
 
     /**
+     * Get bot token
+     * @param string $proxy
+     */
+    public function getToken(): string
+    {
+        return $this->accessToken;
+    }
+
+    /**
      * Set the SOCKS5 proxy
      * @param string $proxy
      */
