@@ -9,7 +9,7 @@
             "email": "WhiskeyMan.Tau@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "sttable",
     "autoload": {
         "psr-4": {
             "Tauweb\\SimpleTelegramBotApi\\": "src/"
