@@ -1,6 +1,12 @@
 <?php
 namespace Tauweb\SimpleTelegramBotApi;
 
+/**
+ * @method string sendMessage(array $params)
+ * @method string deleteMessage(array $params)
+ * @method string answerCallbackQuery(array $params)
+ * @method string editMessageText(array $params)
+ */
 class TelegramBotApi
 {
     const BASE_BOT_API_URL = 'https://api.telegram.org/bot';
