@@ -13,7 +13,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method bool getCanReadAllGroupMessages()
  *
  */
-class User extends BaseType
+class User extends Type
 {
 
 }

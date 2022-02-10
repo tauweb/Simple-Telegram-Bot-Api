@@ -11,7 +11,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  *
  * @method int getDuration() Voice chat duration; in seconds
  */
-class VoiceChatEnded extends BaseType
+class VoiceChatEnded extends Type
 {
 
 }

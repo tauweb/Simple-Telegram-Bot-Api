@@ -21,7 +21,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method int             getOpenPeriod()            Optional. Amount of time in seconds the poll will be active after creation
  * @method int             getCloseDate()             Optional. Point in time (Unix timestamp) when the poll will be automatically closed
  */
-class Poll extends BaseType
+class Poll extends Type
 {
     protected array $subTypes = [
         'options' => [PollOption::class],

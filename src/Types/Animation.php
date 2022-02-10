@@ -13,7 +13,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method string getMimeType()
  * @method int getFileSize()
  */
-class Animation extends BaseType
+class Animation extends Type
 {
     /**
      * @var array|string[]

@@ -10,7 +10,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method int getFile_size()
  *
  */
-class PhotoSize extends BaseType
+class PhotoSize extends Type
 {
 
 }

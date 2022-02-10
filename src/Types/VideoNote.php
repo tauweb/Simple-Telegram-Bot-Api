@@ -14,7 +14,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method PhotoSize getThumb()        Optional. Video thumbnail as defined by sender
  * @method int       getFileSize()     Optional. File size
  */
-class VideoNote extends BaseType
+class VideoNote extends Type
 {
     /**
      * @var array|string[]

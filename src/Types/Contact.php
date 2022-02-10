@@ -12,7 +12,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method int    getUserId()      Optional. Contact's user identifier in Telegram
  * @method string getVcard()       Optional. Additional data about the contact in the form of a vCard
  */
-class Contact extends BaseType
+class Contact extends Type
 {
 
 }

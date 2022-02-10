@@ -9,7 +9,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  *
  * @link https://core.telegram.org/bots/api#voicechatstarted
  */
-class VoiceChatStarted extends BaseType
+class VoiceChatStarted extends Type
 {
 
 }

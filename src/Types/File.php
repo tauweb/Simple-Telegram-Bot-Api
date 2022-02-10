@@ -12,7 +12,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method int    getFileSize()     Optional. File size, if known
  * @method string getFilePath()     Optional. File path. Use https://api.telegram.org/file/bot<token>/<file_path> to get the file.
  */
-class File extends BaseType
+class File extends Type
 {
     // TODO:
 }

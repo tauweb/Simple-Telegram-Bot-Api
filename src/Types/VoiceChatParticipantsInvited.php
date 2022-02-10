@@ -11,7 +11,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  *
  * @method User[] getUsers() Optional. New members that were invited to the voice chat
  */
-class VoiceChatParticipantsInvited extends BaseType
+class VoiceChatParticipantsInvited extends Type
 {
     protected array $subTypes = [
         'users' => [User::class],

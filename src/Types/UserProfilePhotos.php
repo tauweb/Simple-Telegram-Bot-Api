@@ -11,7 +11,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  *
  * @method PhotoSize[][] getPhotos()
  */
-class UserProfilePhotos extends BaseType
+class UserProfilePhotos extends Type
 {
     protected array $subTypes = [
         'photos' => PhotoSize::class,

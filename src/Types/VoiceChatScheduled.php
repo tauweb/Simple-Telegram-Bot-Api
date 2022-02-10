@@ -11,7 +11,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  *
  * @method int getStartDate() Point in time (Unix timestamp) when the voice chat is supposed to be started by a chat administrator
  */
-class VoiceChatScheduled extends BaseType
+class VoiceChatScheduled extends Type
 {
 
 }

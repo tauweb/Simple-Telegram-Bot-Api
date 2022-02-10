@@ -11,7 +11,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method User getWatcher()  User that set the alert
  * @method int  getDistance() The distance between the users
  */
-class ProximityAlertTriggered extends BaseType
+class ProximityAlertTriggered extends Type
 {
     protected array $subTypes = [
         'traveler' => User::class,

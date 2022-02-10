@@ -10,7 +10,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method User getUser()
  * @method string getLanguage()
  */
-class MessageEntity extends BaseType
+class MessageEntity extends Type
 {
     protected array $subTypes = [
         'user' => User::class,

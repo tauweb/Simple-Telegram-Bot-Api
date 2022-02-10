@@ -4,7 +4,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
 
 use Illuminate\Support\Facades\Log;
 
-abstract class BaseType
+abstract class Type
 {
     private array $rawUpdateData;
 

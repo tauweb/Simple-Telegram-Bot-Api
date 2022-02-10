@@ -17,7 +17,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method string    getMimeType()     Optional. Mime type of a file as defined by sender
  * @method int       getFileSize()     Optional. File size
  */
-class Video extends BaseType
+class Video extends Type
 {
 
     /**

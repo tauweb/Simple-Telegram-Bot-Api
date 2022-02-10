@@ -63,7 +63,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method VoiceChatParticipantsInvited getVoiceChatParticipantsInvited()
  * @method InlineKeyboardMarkup getReplyMarkup()
  */
-class Message extends BaseType
+class Message extends Type
 {
     protected array $subTypes = [
         'from' => User::class,

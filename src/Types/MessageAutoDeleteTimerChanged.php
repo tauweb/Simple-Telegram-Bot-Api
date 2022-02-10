@@ -11,7 +11,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  *
  * @method int getMessageAutoDeleteTime() New auto-delete time for messages in the chat
  */
-class MessageAutoDeleteTimerChanged extends BaseType
+class MessageAutoDeleteTimerChanged extends Type
 {
 
 }

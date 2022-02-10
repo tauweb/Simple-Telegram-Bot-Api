@@ -13,7 +13,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method int getFileSize()
  * @method PhotoSize getThumb()
  */
-class Audio
+class Audio extends Type
 {
     /**
      * @var array|string[]

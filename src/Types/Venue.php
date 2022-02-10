@@ -15,7 +15,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method string   getGooglePlaceId()   Optional. Google Places identifier of the venue
  * @method string   getGooglePlaceType() Optional. Google Places type of the venue
  */
-class Venue extends BaseType
+class Venue extends Type
 {
     protected array $subTypes = [
         'location' => Location::class,

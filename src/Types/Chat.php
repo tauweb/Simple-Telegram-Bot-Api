@@ -26,7 +26,7 @@ use phpDocumentor\Reflection\Types\Integer;
  * @method ChatLocation getLocation()
  *
  */
-class Chat extends BaseType
+class Chat extends Type
 {
     protected array $subTypes = [
         'photo' => ChatPhoto::class,

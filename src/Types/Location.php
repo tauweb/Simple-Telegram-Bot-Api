@@ -14,7 +14,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method int   getHeading()              Optional. The direction in which user is moving, in degrees; 1-360. For active live locations only.
  * @method int   getProximityAlertRadius() Optional. Maximum distance for proximity alerts about approaching another chat member, in meters. For sent live locations only.
  */
-class Location extends BaseType
+class Location extends Type
 {
 
 }

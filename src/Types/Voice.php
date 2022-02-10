@@ -13,7 +13,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method string getMimeType()     Optional. MIME type of the file as defined by sender
  * @method int    getFileSize()     Optional. File size
  */
-class Voice extends BaseType
+class Voice extends Type
 {
 
 }

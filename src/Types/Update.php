@@ -19,7 +19,7 @@ namespace Tauweb\SimpleTelegramBotApi\Types;
  * @method ChatMemberUpdated getChatMember()
  * @method ChatJoinRequest getChatJoinRequest()
  */
-class Update extends BaseType
+class Update extends Type
 {
     /**
      * @var array|string[]
