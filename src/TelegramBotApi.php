@@ -1,7 +1,10 @@
 <?php
 namespace Tauweb\SimpleTelegramBotApi;
 
+use Illuminate\Support\Facades\Log;
+
 /**
+ * @method s
  * @method string sendMessage(array $params)
  * @method string deleteMessage(array $params)
  * @method string answerCallbackQuery(array $params)
@@ -11,9 +14,10 @@ class TelegramBotApi
 {
     const BASE_BOT_API_URL = 'https://api.telegram.org/bot';
 
-    protected $proxy = null;
+    private $proxy = null;
+    private $accessToken = null;
 
-    protected $accessToken = null;
+    private Update $update;
 
     public function __construct(string $token)
     {

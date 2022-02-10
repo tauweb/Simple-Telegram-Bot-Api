@@ -30,3 +30,5 @@ or
 ```php
 (new Bot('Your Bot Token'))->getChatMember(['chat_id' => 111, 'user_id' => 222]);
 ```
+
+TODO: Продолжить от https://core.telegram.org/bots/api#keyboardbutton
